@@ -17,9 +17,9 @@ a {
 .site-title {
   a {
     text-decoration :none;
-    opacity: 0.6;
+    @include opacity(0.6);
     &:hover {
-      opacity: 1;
+      @include opacity(1);
     }
   }
 }
