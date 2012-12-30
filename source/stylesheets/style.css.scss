@@ -107,6 +107,18 @@ pre code {
   @include border-radius();
 }
 
+code {
+  border: 1px solid #DDD;
+  background-color: #EFEFEF;
+  padding: 0.2em 0.4em;
+  @include border-radius;
+}
+
+blockquote {
+  padding-left: $base-spacing-unit ;
+  border-left: 4px solid #DDD;
+}
+
 .btn {
   color: white;
   background-color: $brand-color;
