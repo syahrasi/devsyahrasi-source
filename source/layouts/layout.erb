@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Use title if it's in the page YAML frontmatter -->
+        <title><%= data.page.title || "dev.syahrasi.com" %></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link href="/stylesheets/solarized_dark.css" media="screen" rel="stylesheet" type="text/css" />
+        <%= stylesheet_link_tag 'style' %>
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <%= javascript_include_tag 'modernizr' %>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+      <header>
+        <div class="wrapper island">
+          <div class="gw">
+            <div class="g one-whole">
+              <h1 class="site-title text-center"><a href="/"><span class="muted">dev.</span>syahrasi.com</a></h1>
+            </div>
+            <div class="g one-whole">
+              <ul class="nav nav--banner nav--block caps milli">
+                <!-- <li><a href="/about.html">About</a></li> -->
+                <li><a href="/archive.html">Archive</a></li>
+                <li><a href="/feed.xml">Subscribe</a></li>
+                <!-- <li><a href="/contact.html">Contact</a></li> -->
+              </ul>
+            </div> 
+          </div>
+        </div>
+      </header>
+      <div class="main" role="main">
+          <div class="wrapper island">
+            <div class="gw">
+              <% if data.page.title %>
+                <div class="g one-whole">
+                  <h2 class="text-center alpha"><%= data.page.title %></h2>
+                  <% if is_blog_article? %>
+                    <p class="text-center"><%= current_page.date.strftime('Published on %d/%m/%Y') %></p>
+                  <% end %>
+                  <hr class="rule rule--ornament" data-ornament="</>">
+                </div>
+              <% end %>
+              <div class="g one-whole">
+                <div class="content">
+                  <%= yield %>
+                </div>
+                <% if is_blog_article? %>
+                  <div class="comments">
+                    <h3 class="caps delta text-center">Comments</h3>
+                    <hr class="rule rule--ornament" data-ornament="</>">
+                    <%= partial "comments"%>
+                  </div>
+                <% end %>   
+              </div>
+            </div>
+          </div>
+        </div>
+      <footer>
+        <div class="wrapper island">
+          <div class="gw">
+            <div class="g one-whole">
+              <ul class="nav nav--banner nav--keywords">
+                <li><%= link_to 'Github', 'https://github.com/syahrasi' %></li>
+                <li><%= link_to 'Google+', 'https://plus.google.com/113791525333673897575' %></li>
+                <li><%= link_to 'Twitter', 'http://twitter.com/syahrasi' %></li>
+                <li><%= link_to 'Facebook', 'http://facebook/syahrasi' %></li>
+                <li><%= link_to 'Gimme Bar', 'https://gimmebar.com/loves/syahrasi' %></li>
+                <li><%= link_to 'Pinterest', 'http://pinterest.com/syahrasi/' %></li>
+              </ul>
+            </div>
+            <div class="g one-whole">
+              <p class="text-center milli">Copyright &copy; 2012 - Syahrasi - Powered by <%= link_to 'Middleman', 'http://middlemanapp.com' %>, <%= link_to 'Sass', 'http://sass-lang.com' %>, <%= link_to 'Compass', 'http://compass-style.org' %> and <%= link_to 'Inuit.css', 'http://inuitcss.com' %>
+              </p>
+            </div>
+          </div>   
+        </div>   
+      </footer>
+
+        <%= javascript_include_tag 'jquery' %>
+        <%= javascript_include_tag 'script' %>
+
+        <script src="/javascripts/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <% if data.page.jsfile %>
+        <%= javascript_include_tag data.page.jsfile %>
+        <% end %>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

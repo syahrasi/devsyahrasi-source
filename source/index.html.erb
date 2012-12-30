@@ -1,0 +1,36 @@
+---
+pageable: true
+per_page: 10
+---
+<div>
+<h3 class="text-center delta caps">Articles</h3>
+<ul class="block-list">
+<% page_articles.each_with_index do |article, i| %>
+  <li>
+    <h2 class="post-title"><%= link_to article.title, article %></h2>
+    <span class="post-date"><%= article.date.strftime('%e %B %Y') %></span></li>
+<% end %>
+</ul>
+
+<% if paginate %>
+  <div class="gw">
+    <div class="g one-third portable-one-whole">
+    <% if prev_page %>
+      <p class="pagination-link"><%= link_to 'Previous page', prev_page %></p>
+    <% else %>
+      <p class="pagination-link muted">Previous Page</p>
+    <% end %>    
+    </div>
+    <div class="g one-third portable-one-whole">
+      <p class="pagination-link text-center">Page <%= page_number %> of <%= num_pages %></p>
+    </div>
+    <div class="g one-third portable-one-whole">
+    <% if next_page %>
+      <p class="pagination-link proceed"><%= link_to 'Next page', next_page %></p>
+    <% else %>
+      <p class="pagination-link proceed muted">Next Page</p>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+</div>

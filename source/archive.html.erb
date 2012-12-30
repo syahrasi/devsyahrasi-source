@@ -1,0 +1,24 @@
+---
+title: Archive
+---
+
+<h3 class="text-center delta caps">Articles</h3>
+<ul class="block-list split">
+  <% blog.articles.each do |article| %>
+    <li><a class="split__title" href="<%= article.url %>"><%= article.title %></a> <span><%= article.date.strftime('%e %b %Y') %></span></li>
+  <% end %>
+</ul>       
+
+<h3 class="text-center delta caps">Tags</h3>
+<ul class="block-list split">
+  <% blog.tags.each do |tag, articles| %>
+    <li><a class="split__title" href="<%= tag_path tag %>"><%= tag %></a> <span class="loz"><%= articles.size %></span></li>
+  <% end %>
+</ul>       
+
+<h3 class="text-center delta caps">By Year</h3>
+<ul class="block-list split">
+  <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+    <li><a class="split__title" href="<%= blog_year_path year %>"><%= year %> </a><span class="loz"><%= articles.size %></span></li>
+  <% end %>
+</ul> 

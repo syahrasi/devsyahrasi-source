@@ -1,0 +1,9 @@
+{
+  "name": "myProject",
+  "version": "1.0.0",
+  "main": ["source/javascripts/script.js", "source/stylesheets/style.css"],
+  "dependencies": {
+    "jquery": "~1.7.2",
+    "modernizr": "~2.5.3"
+  }
+}

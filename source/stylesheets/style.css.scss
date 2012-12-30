@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@import "compass";
+@import "vars";
+@import "inuit/inuit.css/inuit";
+
+html {
+  background-color: #EFE8D5;
+  color: #333;
+  font-family: $brand-face;
+}
+
+a {
+  color: $brand-color;
+}
+
+.site-title {
+  a {
+    text-decoration :none;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+#{headings(all)} {
+  // color: #002B36;
+  color: #666;
+  font-family: $brand-face-alt;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+.main {
+  padding: 20px;
+}
+
+header {
+  // background-color: #002B36;
+  background-color: #111;
+  a {
+    color: #EFE8D5;
+  }
+}
+
+.main {
+  background-color: #FFF;
+}
+
+.content {
+  margin-bottom: $base-spacing-unit;
+}
+
+.nav {
+  margin-bottom: 0;
+}
+
+.post-title {
+  margin-bottom: 0;
+}
+
+.block-list {
+  border-color: #DDD;
+  li {
+    padding-left: 0;
+    padding-right: 0;
+    border-color: #DDD;
+  }
+}
+.rule {
+  border-color: #DDD;
+}
+
+.loz {
+  background-color: $brand-color;
+  font-size: 0.8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+pre,code,kbd,samp{
+  font-family: Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+pre code {
+  padding: $half-spacing-unit $base-spacing-unit;
+  @include border-radius();
+}
+
+.btn {
+  color: white;
+  background-color: $brand-color;
+  @include border-radius();
+}
+
+.pagination-link {
+  @extend .milli;
+  @include media-query(portable) {
+    text-align: center;
+  }
+}
+
+.nav--keywords {
+  li {
+    &:after {
+      content: " | ";
+    }
+  }
+}
