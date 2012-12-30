@@ -59,8 +59,24 @@ header {
   margin-bottom: 0;
 }
 
-.post-title {
+.no-bottom-margin {
   margin-bottom: 0;
+}
+
+.post-date {
+  font-family: $brand-face-alt;
+  font-style: italic;
+}
+
+.fancy-top-border {
+  &:before {
+    width: 40px;
+    margin: 0 auto;
+    margin-bottom: $base-spacing-unit;
+    content: "";
+    display: block;
+    border-top: 1px solid #666;
+  } 
 }
 
 .block-list {

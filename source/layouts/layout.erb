@@ -49,9 +49,8 @@
                 <div class="g one-whole">
                   <h2 class="text-center alpha"><%= data.page.title %></h2>
                   <% if is_blog_article? %>
-                    <p class="text-center"><%= current_page.date.strftime('Published on %d/%m/%Y') %></p>
+                    <p class="post-date text-center fancy-top-border"><%= current_page.date.strftime('Published on %e %B %Y') %></p>
                   <% end %>
-                  <hr class="rule rule--ornament" data-ornament="</>">
                 </div>
               <% end %>
               <div class="g one-whole">
@@ -59,6 +58,7 @@
                   <%= yield %>
                 </div>
                 <% if is_blog_article? %>
+                  <hr class="rule rule--ornament" data-ornament="</>">
                   <% if current_article.tags.length > 0 %>
                   <div class="article-tags landmark milli">
                     <ul class="nav nav--keywords nav--banner">
