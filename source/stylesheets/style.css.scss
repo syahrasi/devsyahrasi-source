@@ -104,10 +104,12 @@ pre code {
   }
 }
 
-.nav--keywords {
-  li {
-    &:after {
-      content: " | ";
+footer {
+  .nav--keywords {
+    li {
+      &:after {
+        content: " | ";
+      }
     }
   }
 }

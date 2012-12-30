@@ -59,6 +59,15 @@
                   <%= yield %>
                 </div>
                 <% if is_blog_article? %>
+                  <% if current_article.tags.length > 0 %>
+                  <div class="article-tags landmark milli">
+                    <ul class="nav nav--keywords nav--banner">
+                    <% current_article.tags.each do |tag| %>
+                      <li><a href="<%= tag_path tag%>"><%= tag %></a></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                  <% end %>
                   <div class="comments">
                     <h3 class="caps delta text-center">Comments</h3>
                     <hr class="rule rule--ornament" data-ornament="</>">
