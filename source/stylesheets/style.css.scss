@@ -113,8 +113,8 @@ pre code {
 code {
   border: 1px solid #DDD;
   background-color: #EFEFEF;
-  padding: 0.2em 0.4em;
-  @include border-radius;
+  padding: 0.1em 0.4em;
+  @include border-radius(4px);
 }
 
 blockquote {
