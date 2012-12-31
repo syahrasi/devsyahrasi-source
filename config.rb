@@ -5,6 +5,7 @@
 # Susy grids in Compass
 # First: gem install susy --pre
 # require 'susy'
+require 'harsh'
 
 # Change Compass configuration
 # compass_config do |config|
