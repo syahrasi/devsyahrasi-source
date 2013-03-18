@@ -10,6 +10,8 @@ dengan blog-blog sebelumnya yang cenderung personal dan umum, kali ini
 saya mencoba untuk fokus membahas hal-hal yang terkait dengan web
 design/development saja. 
 
+READMORE
+
 Fungsi utama dari blog ini adalah untuk *personal learning* dan *future
 reference* buat saya pribadi, dan mudah-mudahan juga bisa bermanfaat buat
 orang lain. 
